@@ -29,9 +29,18 @@ const App = () => {
     },
   ];
 
+  const addNewExpense = (expense) => {
+    expense = {
+      ...expense,
+      id: Math.random().toString(),
+    };
+    expenses.push(expense);
+    console.log(expense);
+  };
+
   return (
     <div>
-      <NewExpense />
+      <NewExpense onSubmit={addNewExpense} />
       <Expenses expenses={expenses} />
     </div>
   );
