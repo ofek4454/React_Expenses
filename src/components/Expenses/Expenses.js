@@ -4,9 +4,10 @@ import "./Expenses.css";
 import Card from "../UI/Card";
 import YearFilter from "./YearFilter";
 import ExpensesList from "./ExpensesList";
+import ExpensesChart from "./ExpensesChart";
 
 const Expenses = (props) => {
-  const [filter, setFilter] = useState(2023);
+  const [filter, setFilter] = useState("all");
 
   const filterSetHandler = (year) => {
     setFilter(year);
@@ -19,9 +20,11 @@ const Expenses = (props) => {
           (expense) => expense.date.getFullYear().toString() === filter
         );
 
+  filteredExpenses.sort((a, b) => b.date - a.date);
   return (
     <div>
       <Card className="expenses">
+        <ExpensesChart expenses={filteredExpenses} />
         <YearFilter value={filter} onFilterSet={filterSetHandler} />
         <ExpensesList expenses={filteredExpenses} />
       </Card>
