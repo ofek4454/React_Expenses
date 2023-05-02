@@ -27,11 +27,11 @@ const ExpenseForm = (props) => {
       date: new Date(date),
     };
 
-    console.log(expenceData);
     props.onSubmit(expenceData);
     setTitle("");
     setAmount("");
     setDate("");
+    props.changeFormVisibility();
   };
 
   return (
@@ -63,7 +63,8 @@ const ExpenseForm = (props) => {
         </div>
       </div>
       <div className="new-expense__actions">
-        <button type="submit">New Expense</button>
+        <button onClick={props.changeFormVisibility}>cancel</button>
+        <button type="submit">Add</button>
       </div>
     </form>
   );

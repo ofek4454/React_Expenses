@@ -12,6 +12,7 @@ const YearFilter = (props) => {
       <div className="year-filter__control">
         <label>Filter by year</label>
         <select value={props.value} onChange={selectedHandler}>
+          <option value="all">show all</option>
           <option value="2024">2024</option>
           <option value="2023">2023</option>
           <option value="2022">2022</option>
