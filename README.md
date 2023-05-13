@@ -1,5 +1,7 @@
 # Expenses tracker
 
+## [Try me!](https://react-expenses-c527d.web.app)
+
 ## Overview
 The tracker expenses web app is a powerful tool designed to help users keep track of their expenses in a convenient and efficient way. 
 This web app has several features that allow users to manage their expenses with ease. 
